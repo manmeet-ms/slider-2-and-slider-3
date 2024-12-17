@@ -1,0 +1,21 @@
+body {
+  background: black;
+  color: white;
+}
+
+.rolling-carousel {
+  height: 50dvw;
+  width: 50dvw;
+
+  &__item {
+    border: 1px solid grey;
+    height: 5dvw;
+    width: 5dvw;
+    background: black;
+    border-radius: 1dvw;
+  }
+}
+
+.placeholder-section {
+  height: 75dvh;
+}

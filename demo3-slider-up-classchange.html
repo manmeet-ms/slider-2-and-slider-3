@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Sticky to Relative on Scroll</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<style>
+body {
+  height: 200vh; /* Make the body scrollable */
+  margin: 0;
+}
+
+.sticky-element {
+  position: sticky;
+  top: 0;
+  background-color: lightblue;
+  padding: 20px;
+  width: 100%;
+  z-index: 10; /* Ensure it's above other content */
+}
+
+.relative-element {
+  position: relative;
+  background-color: lightcoral; /* Just to visualize the change */
+  padding: 20px;
+  width: 100%;
+}
+
+.content {
+    padding-top: 100px; /* To push content below sticky element */
+}
+</style>
+</head>
+<body>
+
+<section class="h-[100vh] flex justify-center items-center " >
+    <!-- <h1 class="text-[10rem] font-bold mx-auto" >How it works</h1> -->
+<div class=" flex justify-center items-center " >
+    <div id="target_this" class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 1</div>
+    <div class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 2</div>
+    <div class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 3</div>
+</div>
+</section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+
+const element = document.getElementById('myElement');
+
+ScrollTrigger.create({
+//   trigger: ".target_these", // or a specific element
+  trigger: "#target_this", // or a specific element
+  start: "top 30%", // Start when the top of the trigger hits 20% of the viewport
+  end: "bottom bottom",
+  onEnter: () => {
+    element.classList.remove('absolute');
+    // element.classList.add('relative-element');
+  },
+//   onLeaveBack: () => {
+//     element.classList.remove('relative-element');
+//     element.classList.add('sticky-element');
+//   },
+  markers: true // For debugging (shows start/end lines)
+});
+</script>
+
+</body>
+</html>
+
+</body>
+</html>
