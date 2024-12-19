@@ -1,73 +1,80 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Sticky to Relative on Scroll</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<style>
-body {
-  height: 200vh; /* Make the body scrollable */
-  margin: 0;
-}
+    <head>
+        <title>Sequential Card Release</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <body>
+        <section class="h-[50vh]"></section>
 
-.sticky-element {
-  position: sticky;
-  top: 0;
-  background-color: lightblue;
-  padding: 20px;
-  width: 100%;
-  z-index: 10; /* Ensure it's above other content */
-}
+        <!-- main section -->
+        <section >
+            <div class="slider3-cardContainer container w-full h-[100vh] relative flex flex-col items-center justify-start pt-24">
+                <h1 class="howItWorks text-[2rem] md:text-[8rem] font-bold text-orange-500">How it Works?</h1>
 
-.relative-element {
-  position: relative;
-  background-color: lightcoral; /* Just to visualize the change */
-  padding: 20px;
-  width: 100%;
-}
+                <div class="cards flex justify-center items-center -mt-28 ">
+                    <div class="slider3-cardStyle transform -rotate-[0deg] z-[10] absolute text-white cardOne">
+                        <div class="p-8  bg-gradient-to-b from-slate-100 via-violet-500 to-violet-600  rounded-[2rem] border border-white w-72 h-96 flex justify-start items-end bg-auto bg-origin-border bg-no-repeat">
+                            <h6 class="text-2xl">1. Download the Swag app today.</h6>
+                        </div>
+                    </div>
+                    <div class="slider3-cardStyle transform -rotate-[10deg] z-[8] absolute text-white cardTwo">
+                        <div class="p-8  bg-gradient-to-b from-slate-100 via-violet-500 to-violet-600  rounded-[2rem] border border-white w-72 h-96 flex justify-start items-end bg-auto bg-origin-border bg-no-repeat">
+                            <h6 class="text-2xl">2. Set up your Swag Spend Account and instantly set up your digital Visa Debit card.</h6>
+                        </div>
+                    </div>
+                    <div class="slider3-cardStyle transform -rotate-[20deg] z-[6] absolute text-white cardThree">
+                        <div class="p-8  bg-gradient-to-b from-slate-100 via-violet-500 to-violet-600  rounded-[2rem] border border-white w-72 h-96 flex justify-start items-end bg-auto bg-origin-border bg-no-repeat">
+                            <h6 class="text-2xl">3. Spend and save on Cashback offers and in the Swag store.</h6>
+                        </div>
+                    </div>
+                    <div class="slider3-cardStyle transform -rotate-[30deg] z-[4] absolute text-white cardFour">
+                        <div class="p-8  bg-gradient-to-b from-slate-100 via-violet-500 to-violet-600  rounded-[2rem] border border-white w-72 h-96 flex justify-start items-end bg-auto bg-origin-border bg-no-repeat">
+                            <h6 class="text-2xl">4. Receive your physical Swag Visa Debit card in the mail after 5-7 days.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+      <div>
 
-.content {
-    padding-top: 100px; /* To push content below sticky element */
-}
-</style>
-</head>
-<body>
+       
+      </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
 
-<section class="h-[100vh] flex justify-center items-center " >
-    <!-- <h1 class="text-[10rem] font-bold mx-auto" >How it works</h1> -->
-<div class=" flex justify-center items-center " >
-    <div id="target_this" class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 1</div>
-    <div class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 2</div>
-    <div class="target_these absolute bg-purple-800 text-white  z-10 mx-auto">card 3</div>
-</div>
-</section>
+        <script>
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    // markers: true,
+                    trigger: '.slider3-cardContainer',
+                    start: 'top 40% ',
+                    end: '+=1500',
+                    scrub: 1,
+                    pin: true,
+                },
+            });
+           
+            const cardAnimationConfig = {
+                yPercent: -500,
+                ease: 'power2.in',
+                duration: 1,
+                rotate: -150,
+            };
 
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-<script>
-gsap.registerPlugin(ScrollTrigger);
-
-const element = document.getElementById('myElement');
-
-ScrollTrigger.create({
-//   trigger: ".target_these", // or a specific element
-  trigger: "#target_this", // or a specific element
-  start: "top 30%", // Start when the top of the trigger hits 20% of the viewport
-  end: "bottom bottom",
-  onEnter: () => {
-    element.classList.remove('absolute');
-    // element.classList.add('relative-element');
-  },
-//   onLeaveBack: () => {
-//     element.classList.remove('relative-element');
-//     element.classList.add('sticky-element');
-//   },
-  markers: true // For debugging (shows start/end lines)
-});
-</script>
-
-</body>
-</html>
-
-</body>
+            // Add text animation at the appropriate time
+            tl.to('.cardOne', { ...cardAnimationConfig });
+            tl.to('.cardTwo', { ...cardAnimationConfig });
+            tl.to('.cardThree', { ...cardAnimationConfig });
+            tl.to('.cardFour', { ...cardAnimationConfig });
+            
+            // Add text scale down animation after the last card
+            tl.to('.howItWorks', {
+                scale: 0,
+                opacity: 0,
+                ease: 'slow.in',
+                duration: 1
+            }, '>-0.7'); // This starts the text animation slightly before the last card finishes
+        </script>
+    </body>
 </html>
