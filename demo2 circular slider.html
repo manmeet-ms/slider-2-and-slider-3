@@ -57,7 +57,7 @@
                 <div
                     class="image-container relative bottom-6 bg-[url('./assets/hourglass.jpeg')] -z-20 bg-contain w-[400px] h-[400px] bg-no-repeat flex justify-center items-center">
                     <section
-                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-xl">
+                        class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-xl">
                         <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400 absolute">
                         </div>
                         <section class="  flex items-center justify-center">
@@ -123,7 +123,7 @@
                     </section>
                     <!-- bar 2 leaf -->
                     <section
-                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                         <div
                             class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
                         </div>
@@ -225,7 +225,7 @@
                     </section>
 
                     <section
-                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        class="section-reveal flex justify-center  top-32 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                         <div
                             class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
                         </div>
@@ -326,11 +326,11 @@
                     </section>
 
                     <section
-                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        class="section-reveal flex justify-center absolute top-24 w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                         <div
                             class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
                         </div>
-                        <section class="flex">
+                        <section class="flex -space-x-8">
                             <div class="flex flex-col">
                                 <div
                                     class="w-40 h-24 flex justify-center items-center z-[4] transform -rotate-[10deg] bg-[#fffc8d] rounded-2xl uppercase font-bold">
@@ -367,7 +367,7 @@
                     </section>
 
                     <section
-                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                         <div
                             class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
                         </div>
@@ -422,7 +422,7 @@
                         </section>
                     </section>
 
-                    <!-- <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                    <!-- <section class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10"></div>
                             <div class="relative h-[600px] w-full flex items-center justify-center">
                                 <div class=" flex items-center gap-4 relative w-full">
@@ -514,7 +514,9 @@
             iconWrappers.forEach((wrapper, index) => {
                 const startAngledeg = -90;
                 const startAngle = startAngledeg * (Math.PI / 180);
-                const arcLength = Math.PI;
+                const arcLength = (3.14/180)*130;
+                // const arcLength = Math.PI;
+                // to prevent icon tilting
                 const angle = startAngle + (index / (totalIcons - 1)) * arcLength - progress * arcLength;
 
                 const x = Math.cos(angle) * radius;
@@ -538,7 +540,7 @@
             '#f59e0b', // orange
             '#22c55e', // green
             '#d946ef', // fuschia
-            '#22c55e', // green
+            '#a3e635', // green
             '#fb923c', // amber
             '#9333ea', // violet
         ];
