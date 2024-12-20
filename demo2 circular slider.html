@@ -1,331 +1,427 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <script src="https://cdn.tailwindcss.com"></script>
-        <title>Slider Image Reveal</title>
-        <!--  
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Slider Image Reveal</title>
+    <!--  
             /* 🔴 DO NOT import these fonts SEGMENT*/
         -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
 
-        <style>
-            /* 🔴 DO NOT USE THIS STYLE SEGMENT*/
-            *{
-                font-family: 'Manrope';
-                font-optical-sizing: auto;
-            }
-            h1,h2,h3,h4,h5,h6{
-                font-family: 'Manrope';
-                font-weight: 800;
-            }
-            .font-mono{
-                font-family: 'Roboto Mono' !important;
-                 font-optical-sizing: auto;
-                font-weight: 400;
-            }
-            p, span{
-                font-family: 'Inter' !important;
-                 font-optical-sizing: auto;
-                font-weight: 400;
-                
-            }
-        </style>
-    </head>
-    <body>
-        <div class="relative w-full">
-            <section id="animation-section" class="min-h-[300vh] w-full">
-                <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-                    <h1 class="text-5xl font-bold text-orange-500 absolute top-12">How we Match?</h1>
-                    <div class="image-container relative bottom-6 bg-[url('./assets/hourglass.jpeg')] -z-20 bg-contain w-[400px] h-[400px] bg-no-repeat flex justify-center items-center">
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400 absolute"></div>
-                            <section class="  flex items-center justify-center">
-                                <div class="relative w-[300px] bg-white rounded-3xl shadow-lg ">
-                                    <div class="relative  overflow-hidden bg-slate-100">
-                                        <iframe
-                                            class="w-full h-full object-cover"
+    <style>
+        /* 🔴 DO NOT USE THIS STYLE SEGMENT*/
+        * {
+            font-family: 'Manrope';
+            font-optical-sizing: auto;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            font-family: 'Manrope';
+            font-weight: 800;
+        }
+
+        .font-mono {
+            font-family: 'Roboto Mono' !important;
+            font-optical-sizing: auto;
+            font-weight: 400;
+        }
+
+        p,
+        span {
+            font-family: 'Inter' !important;
+            font-optical-sizing: auto;
+            font-weight: 400;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="relative w-full">
+        <section id="animation-section" class="min-h-[300vh] w-full">
+            <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
+                <h1 class="text-5xl font-bold text-orange-500 absolute top-12">How we Match?</h1>
+                <div
+                    class="image-container relative bottom-6 bg-[url('./assets/hourglass.jpeg')] -z-20 bg-contain w-[400px] h-[400px] bg-no-repeat flex justify-center items-center">
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-xl">
+                        <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400 absolute">
+                        </div>
+                        <section class="  flex items-center justify-center">
+                            <svg class="absolute w-28 left-8 z-40" xmlns="http://www.w3.org/2000/svg"
+                                xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 116 102">
+                                <path
+                                    d="M 14.303 97 C 14.303 97 2.25 85.894 2.25 58.098 C 2.25 30.302 37.572 4 116.25 4"
+                                    fill="#00000000" stroke-width="1.5" stroke="#000000" stroke-dasharray="5" />
+                            </svg>
+                            <div class="relative w-[300px] bg-white rounded-3xl shadow-lg ">
+
+                                <div class="relative overflow-hidden bg-slate-100">
+                                    <img class="w-full h-40 object-cover rounded-t-xl"
+                                        src="https://framerusercontent.com/images/Y5TNKeX69ttaAK2d6xJmQ5JvOE.png?scale-down-to=512"
+                                        alt="">
+                                    <!-- <iframe
+                                            class="w-full h-full object-cover rounded-t-xl "
                                             frameborder="0"
-                                            src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
-                                        </iframe>
-                                    </div>
+                                            src="https://maps.google.com/maps?q=1%20Grafton%20Street,%20Dublin,%20Ireland+(My%20Business%20Name)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+                                        </iframe> -->
+                                </div>
 
-                                    <div class="absolute -right-4 top-4 w-36">
-                                        <div class=" bg-white rounded-2xl shadow-lg p-2">
-                                            <div class="absolute -top-2 -right-4 bg-yellow-200 px-3 py-1 rounded-full text-sm font-medium transform rotate-12 text-xs">Arrives today</div>
+                                <div class="absolute -right-4 top-4 w-36">
+                                    <div class=" bg-white rounded-2xl shadow-lg p-2">
+                                        <div
+                                            class="absolute -top-2 -right-4 bg-yellow-200 px-3 py-2 rounded-full   font-bold transform rotate-12 text-xs">
+                                            Arrives today</div>
 
-                                            <div class="mt-6">
-                                                <img src="https://framerusercontent.com/images/v05QFgyMGqCxfGTuKic22RoxiPk.png" alt="Nike Shoes" class="w-full h-auto" />
-                                            </div>
+                                        <div class="mt-4 py-6">
+                                            <img src="https://framerusercontent.com/images/v05QFgyMGqCxfGTuKic22RoxiPk.png"
+                                                alt="Nike Shoes" class="w-full h-auto" />
                                         </div>
                                     </div>
-
-                                    <div class="flex p-4    items-center space-x-3 mt-4 px-2">
-                                        <div class="w-8 h-8 bg-slate-100 rounded-full flex items-center justify-center">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor">
-                                                <path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+                                </div>
+                                <div class="flex flex-col  px-2 pt-2 pb-4  space-x-3  px-2 mt-4">
+                                    <div class="h-2 bg-slate-200 rounded w-1/2 ml-4"></div>
+                                    <div class="flex items-center justify-start ">
+                                        <div
+                                            class="w-8 h-8 text-slate-400 rounded-full flex items-center justify-center">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" viewBox="0 0 20 20"
+                                                fill="none" stroke-width="2" stroke="currentColor">
+                                                <path fill-rule="evenodd"
+                                                    d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z"
+                                                    clip-rule="evenodd" />
                                             </svg>
                                         </div>
-                                        <div class="flex-1">
-                                            <div class="h-2 bg-slate-200 rounded w-3/4 mb-2"></div>
-                                            <div class="h-2 bg-slate-100 rounded w-1/2"></div>
+                                        <div class="flex flex-col">
+                                            <div class="h-[6px] bg-slate-200 rounded w-20 mb-1"></div>
+                                            <div class="h-[6px] bg-slate-200 rounded w-12"></div>
                                         </div>
                                     </div>
 
-                                    <div class="absolute bottom-4 right-4 w-8 h-8 bg-black rounded-full flex items-center justify-center">
-                                        <svg class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
-                                            <path
-                                                d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" />
-                                        </svg>
+                                </div>
+                                <div
+                                    class="absolute bottom-4 right-4 w-8 h-8 bg-black rounded-full flex items-center justify-center">
+                                    <svg class="w-6 h-6 text-white" viewBox="0 0 24 24" fill="currentColor">
+                                        <path
+                                            d="M21 8.719L7.836 14.303C6.74 14.768 5.818 15 5.075 15c-.836 0-1.445-.295-1.819-.884-.485-.76-.273-1.982.559-3.272.494-.754 1.122-1.446 1.734-2.108-.144.234-1.415 2.349-.025 3.345.275.2.666.298 1.147.298.386 0 .829-.063 1.316-.19L21 8.719z" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </section>
+                    </section>
+                    <!-- bar 2 leaf -->
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        <div
+                            class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10">
+                        </div>
+                        <section class="  ">
+                            <div class="bg-white rounded-3xl p-6 shadow-md">
+                                <div class="  ">
+                                    <div class="absolute bottom-1/3 flex container gap-1 w-full ">
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                    </div>
+
+                                    <div class="h-2 bg-gray-300 rounded w-1/4"></div>
+                                    <h2 class="mt-1 mb-4 text-3xl font-bold">CO<sub>2</sub>e</h2>
+
+                                    <div class="flex space-x-2 ">
+                                        <div class="w-2 h-2 bg-gray-300 rounded-full size-4"></div>
+                                        <div class="h-2 bg-gray-300 rounded w-24"></div>
                                     </div>
                                 </div>
-                            </section>
-                        </section>
-<!-- bar 2 leaf -->
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
-                            <section class="  ">
-                                <div class="bg-white rounded-3xl p-6 shadow-md">
-                                    <div class="  ">
-                                        <div class="absolute bottom-1/3 flex container gap-1 w-full ">
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                        </div>
 
-                                        <div class="h-2 bg-gray-300 rounded w-1/4"></div>
-                                        <h2 class="mt-1 mb-4 text-3xl font-bold">CO<sub>2</sub>e</h2>
-                                      
-                                        <div class="flex space-x-2 "><div class="w-2 h-2 bg-gray-300 rounded-full size-4"></div>
-                                        <div class="h-2 bg-gray-300 rounded w-24"></div></div>
-                                    </div>
-
-                                    <div class="flex items-end justify-between h-32 gap-4">  
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[72px]"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[80px]"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[100px]"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[64px]"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[72px]"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[120px]"></div>
+                                <div class="flex items-end justify-between h-32 gap-4">
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[72px]">
                                         </div>
                                     </div>
-                                </div>
-                            </section>
-                        </section>
 
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
-                            <section class="  ">
-                                <div class="bg-white rounded-3xl p-6 shadow-md">
-                                    <div class="  ">
-                                        <div class="absolute bottom-1/2 flex container gap-1 w-full ">
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div> 
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
-                                            <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[80px]">
                                         </div>
-
-                                        <div class="h-2 bg-gray-300 rounded w-1/4 mb-2 "></div>
-                                         
-                                        <div class="flex space-x-2 "><div class="w-2 h-2 bg-gray-300 rounded-full size-4"></div>
-                                        <div class="h-2 bg-gray-400/60 rounded w-24"></div></div>
                                     </div>
 
-                                    <div class="flex items-end justify-between h-40 gap-4">  
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-amber-400/60 to-lime-500 rounded-lg h-24"></div>
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[100px]">
                                         </div>
+                                    </div>
 
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-purple-500/60 via-purple-500 to-pink-300 rounded-lg h-24"></div>
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[64px]">
                                         </div>
+                                    </div>
 
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-amber-400/60 to-pink-500 rounded-lg h-32"></div>
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[72px]">
                                         </div>
+                                    </div>
 
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-amber-400/60 to-lime-500 rounded-lg h-24"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-amber-500/60 via-red-400 to-pink-300 rounded-lg h-28"></div>
-                                        </div>
-
-                                        <div class="flex flex-col items-center gap-2 w-full">
-                                            <div class="h-2 bg-gray-200 rounded w-8"></div>
-                                            <div class="w-full bg-gradient-to-b  from-purple-500/60 via-purple-500 to-pink-300 rounded-lg h-36"></div>
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-green-400/60 to-emerald-500 rounded-lg h-[120px]">
                                         </div>
                                     </div>
                                 </div>
-                            </section>
+                            </div>
                         </section>
+                    </section>
 
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
-                            <section class="flex">
-                                <div class="flex flex-col">
-                                    <div class="w-40 h-24 flex justify-center items-center z-[4] transform -rotate-[10deg] bg-[#fffc8d] rounded-2xl uppercase font-bold">sneakhub</div>
-                                    <div class="relative bottom-14 w-40 h-24 flex justify-center items-center z-[3] transform -rotate-[20deg] bg-[#e8e6d4] rounded-2xl uppercase text-xs font-medium text-xs">
-                                        <div class="size-16 border border-2 border-gray-900 rounded-full"></div>
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        <div
+                            class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10">
+                        </div>
+                        <section class="  ">
+                            <div class="bg-white rounded-3xl p-6 shadow-md">
+                                <div class="  ">
+                                    <div class="absolute bottom-1/2 flex container gap-1 w-full ">
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
+                                        <div class="h-0.5 w-1 rounded-full bg-gray-600/30"></div>
                                     </div>
-                                    <div class="relative bottom-[100px] w-40 h-24 flex justify-center items-center z-[2] transform -rotate-[30deg] bg-[#a9cf78] text-white text-xl rounded-2xl capitalize font-serif">logical</div>
-                                    <div class="relative bottom-[140px] w-40 h-24 flex justify-center items-center z-[1] transform -rotate-[40deg] bg-[#e12321] rounded-2xl uppercase text-[4rem] text-white font-bold">rb</div>
+
+                                    <div class="h-2 bg-gray-300 rounded w-1/4 mb-2 "></div>
+
+                                    <div class="flex space-x-2 ">
+                                        <div class="w-2 h-2 bg-gray-300 rounded-full size-4"></div>
+                                        <div class="h-2 bg-gray-400/60 rounded w-24"></div>
+                                    </div>
                                 </div>
 
-                                <div class="flex flex-col">
-                                    <div class="w-40 h-24 flex justify-center items-center z-[4] transform -rotate-[10deg] bg-[#615151] text-gray-100 rounded-2xl uppercase text-xs font-mono">
-                                        gemini <br />
-                                        appliances
+                                <div class="flex items-end justify-between h-40 gap-4">
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-amber-400/60 to-lime-500 rounded-lg h-24">
+                                        </div>
                                     </div>
-                                    <div class="relative bottom-14 w-40 h-24 flex justify-center items-center z-[3] transform -rotate-[20deg] bg-emerald-700 text-yellow-400 rounded-2xl uppercase text-xl font-medium">sample</div>
-                                    <div class="relative bottom-[100px] w-40 h-24 flex justify-center items-center z-[2] transform -rotate-[30deg] bg-lime-800 text-white rounded-2xl uppercase text-xs font-bold">logo</div>
-                                    <div class="relative bottom-[140px] w-40 h-24 flex justify-center items-center z-[1] transform -rotate-[40deg] bg-white text-gray-900 rounded-2xl uppercase text-xl font-medium">made in india</div>
+
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-purple-500/60 via-purple-500 to-pink-300 rounded-lg h-24">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-amber-400/60 to-pink-500 rounded-lg h-32">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-amber-400/60 to-lime-500 rounded-lg h-24">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-amber-500/60 via-red-400 to-pink-300 rounded-lg h-28">
+                                        </div>
+                                    </div>
+
+                                    <div class="flex flex-col items-center gap-2 w-full">
+                                        <div class="h-2 bg-gray-200 rounded w-8"></div>
+                                        <div
+                                            class="w-full bg-gradient-to-b  from-purple-500/60 via-purple-500 to-pink-300 rounded-lg h-36">
+                                        </div>
+                                    </div>
                                 </div>
-                            </section>
+                            </div>
                         </section>
+                    </section>
 
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
-                            <section class="flex items-start  space-x-4 rounded-xl">
-                                
-                                <div class="flex flex-col gap-4 ">
-<div class="flex items-start gap-2 bg-white p-4 rounded-xl shadow-lg">
-    <img class="w-12 p-2 border rounded-full object-contain " src="https://static.vecteezy.com/system/resources/previews/019/766/223/original/amazon-logo-amazon-icon-transparent-free-png.png" alt="" />
-    <div class="flex flex-col ">
-        <div class="flex">
-            <fu1l class="flex flex-col ">
-                <h1 class="font-medium">Amazon</h1>
-                <p class="leading-tight text-sm">
-                    Payment due in 11 days
-                    <br />
-                    On its way
-                </p>
-            <!-- <div class="bg-gray-300 w-12 h-3 rounded-full"></div> -->
-        </div>
-        <div class="flex my-2 relative right-4">
-            <img src="https://th.bing.com/th/id/OIP.qDBvlp9cQgCVR-pjYJ7yZgHaJ4?rs=1&pid=ImgDetMain" alt="Product 3" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
-            <img src="https://th.bing.com/th/id/OIP.9Sxb3w5iK6Sl72cqWAEWLQHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Product 2" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
-            <img
-                src="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAsJCQcJCQcJCQkJCwkJCQkJCQsJCwsMCwsLDA0QDBEODQ4MEhkSJRodJR0ZHxwpKRYlNzU2GioyPi0pMBk7IRP/2wBDAQcICAsJCxULCxUsHRkdLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCwsLCz/wAARCADtAO0DASIAAhEBAxEB/8QAHAABAAIDAQEBAAAAAAAAAAAAAAEHAgUGBAMI/8QATRAAAQMDAQUEBgYFBwoHAAAAAQACAwQFERIGITFBURNhcZEHFCKBobEVIzJCUnJiksHR8CRERVNjovEWJTM1Q1RzgrLCZXR1k6O04f/EABoBAQADAQEBAAAAAAAAAAAAAAABAgQDBgX/xAA0EQACAgECBAQDBgYDAAAAAAAAAQIDEQQxBRIhQRNRcYEyYaEGFCKRsdEVIyTB4fAzUvH/2gAMAwEAAhEDEQA/ALcREQBERAEREAREQBERAEREAREQBERAEREAREQBERAEREAREQBERAFClEAREQBERAEREAREQBERAEREAREQBERAEXiuVyt9ppJa2vmEVOwhuSC5znu3NZG1u8uPT9gyOTPpM2bD8CkupZnGrsqce/BmyquSW7NNOluvTdcW0dyi1tovNrvlL63b5S+NrzFK17SyWKQAO0SNPPeOoWyVk89UcJRcG4yWGgiIhUIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCItbdLzZ7PEJbhVRw6gTHH9qaXHKOJvtHywhaMZTfLFZZsli5zWgucQGtBJLiAABzJO5VfdfSRXSl8dnpGU8e8CoqwJZyOrY2nswfEuXG111u1ydquFdU1O/OmWQ9k38sYwwe5q5uxI+9p+A6i1ZsaivqXPWbWbKURLZrrTOeM5ZSl1S/PQinDsHxWiqfSTZI8iloa+cjgZOygYfD2nO/uqqNWcDdjkAMAe4KC7HDj1XN3M+zV9n9NDrY3L6FhT+ku4kn1a10kQ5esTSzHHgwMWrm9IW1Uh+rlo4enY0rfnM5648k8+PNRuXPxWbYcL0cNq179TbXbaC+3uGOnuVa+aFkwnZH2cMbRIGuYHfVMaeBI481pTAOTn+a+qZVXJPc1R01UViMUvTobK0X6/WJk8dsq+yjnkbLM0xQy63hunJ7VhPDoVv4PSPtRHgSC3z9e2p3sPnE9vyXHKDg7ipU2tmcLNBp59ZQT9ix6f0nVAwKq0RP6up6lzPJsjHf9S3NN6R9mpdInir6Y8y+JkrB74nF391U97Q4bx05qQ8EKyufcxT4No59MNe//pf1HtJszXkClutG553BkknYyk90c2l3wW2yvzWSP8Vsrffb9ay31C41MLQc9lr7SA+MMmWfBdFd5nzbvs/jrTP8/wB1+x+g0VY2r0lyNLIr1Rhw3A1NDucO98Dzg9+HDwVgW662u7Qes26qiqIhgO0Eh8bj92RjsOB7iAuqkpbHwNTo7tM/5kffse5ERWMgREQBERAEREAREQBEXH7bbSus1G2jo36blXMdoc3jTU+9rpR+keDPefu4MN46naimd9irgurPNtXttHa3S2+19nNcW5ZPM72oaR3DTjg6QdOA55xpVWT1FVWzy1FVUSTTvOqSaoeXOPdk9OQC85cSSSSSSSSd5JO/JKgvJAbuwM8O9ZpTzue/0ehq0cMQWZd2ZOO84Oe8ZwfNY5WOUzlcWze5mWrHiscqCcqeio3kjmJyVBKhFUnJOUUZUgHHLu3jJ8FKTexHMTlMhYp+9Rlk8xKh2eI4/NEU5KvqAc71Kx4H+OKZRMopGWR944HmvTRV1fbamOroKmSCdn2ZIjjUOOl7TuI6ggheRNRxjkukZLBWSUliXVFy7K7b0t5MdDXiOmuhADNJxBVkf1WeDurc+BPBvaL8zhxBa5pLXNIc0tJDmkHIII35HJXFsRtWbxA63V7x9KUsepshwPXIG7tf527tfnzOnXCzm6M8jxPhngfzafh7ryO2REXU+AEREAREQBERAfOSSOKOSSRwZHGx0kjncGsaNTifBfn+93Sa73OvuEhP18p7Fp/2cLfZjYPAYz35PNW5txXOotnLlpJElWYqFhBxumd9YP1Q5UeTxXG2XY9XwGlRjK9+i/uCVGViSmVkbyehcicplZxU9VOJjBBNKIIzNOYY3vEUYOC95aNwXyVWUU8szHzKnioCA5QumTlFCcVBbJPmh0O062ai0bjngozwRE2tiJJSWGT1PXeihCoLJhFCIMkneFAOVPVY5wT5qSjfXJKKCmUIyTleiirKqgq6WtpX9nUUsrZoXctTeTh0O8OHQrzZTKunhlZYknF7H6Ls9zp7xbaG4wbmVMQc5mcmKVp0vjPe0gj/ABXvVWejK7OZUXCyyO9idprqUHlKzDJWjxGk/wDKVaa3xlzLJ4DWaf7vc6+3b0JREVjKEREAUFSoKArn0n1BbSWOlB3TVNVUOH/BY2ME/rlVY5WF6T5Ca6yR8mUc8g8XzY/7VXZKzWbnt+GLl0kPnn9QsmMc9zGN3ue5rGjq5xDQFhyJ6DKsr/Ja3QbM1jY4IpboKZtZ62RmUTNaJC2F+7DRjAHv4ndyjBy2Omp1UaOXPd4NjaLFDZrNeIC/tqqppZ3VcjGkBxEbg2OMO+63JxnjkndnAqbmPcrj2cubbvbaaofjtXxvpqscAJ2DS/cOR3OH5lUtfTvpKytpnDDoJ5ojx+64gcV1uSwmj5/CrJudsbPiz/g2OzVn+mrpBSyahSxtNRWOacO7FhA0NPVxIHmeS+e0FsdabrX0gifHCJDJShz9eqmeSWO1nee/wVgbE2j6PtgrJmkVNxEc7s8Y6cAmJvkS4/m7lptv7hZp3UtIyMyXOnwTM04EMDskxydSeIHLjzwautKvPcmvXynrXCPWO3+Tg8ooKhZj73MZZTKxRBky+CKFCDJkmVipyoJySOP8FYniD4gohP7ChVvoCoU/vUKSmQpUIrIZNnYrgbXeLRX6sNpquIyn+weezlH6pK/ROQvzJjOR1BC/Q9gqzXWSx1bjl81BTOkP9oGBr/iCtdL7HnONV9YWextURF3POBERAFDlKgoCovScT9MWwdLUw+dRMuBK730n/wCu7b/6TF/9idcCSslm7Pc6B/0sPQK3tkasVVjtvae0WRSUUmd+RE4xjOe7CqFWZsK2T6GncSQBW1T2d7Wxxk/HKml/iMPF4p0p+TM9nqaax329WaTPYztZcqB2MNdGHdm7HLIBaD+Vaq7WL1zbb1XQTTVIhuVT/wCXa0B+fzEaf+ZdpPBFX/RVZE9vb0EpmhkB1NlpZmFk0eRu3jBH5Qva2OF8oqSxvaiEROlwNZja4vDMjfjO9d+RNYZ8da2UJuxbyWH6+ZpNqb02y28Ng0irnHZUzQMNYcfaxww0cvBcjsTZGXavqbnXtM1NRSBxEvtCprH+2NeeIb9o95HLctTtPczc7tWSiQvggc6CDB9ktYfac3xKszZijZbdn7bFgdpLF65UHrLUfWHPgMD3KmeefyRrnH7lpVj4pnJ7c7O01ITeKARRwyyNZVwMw1rJX8JI29Hcx7/Dg10O1N6muldLCyRxoaWVzImA7nyNy10hx7wP/wBXPLNbjm6H2tCrFRFW7/2JUIi5G0lFCISSoUJ/G9CMkoTu48lGSmUIbGf2KViOAUqSE8kooRSiSQrw9Hk3bbL0DCcmmnrYPcJ3SAeTgqPVtejerEdjrY3H7N1qMeBggctNW58ji0Oej3LDREWk8kEREAUFSiAqL0oD/PFrPW2AeU8n71X5VielJuLjZXdaGZv6s2f2quislu57bh7/AKWH+9wre2OgNLYLeXjBkilqjnpNI5zfhhVfaLbUXi40VugB1VEmJH8o4WjVJIc9BnHfgc1bV3lhtNpquxIjENMY4W5OA2NmlgBHuCtUujkfP4rPncKVu2crs3tJHDW1FqqpA2nlqqn6OmJw2PXI4iB2eAP3PHHMY7OtfVttVydSRmSpbTSmJjQCS4MJ3DIVJxanyRc3GWLjxLi8K85JRAyJz5GtD5hG0uIGXuyA0Z5nkrVSbTTMnEqI02xnFb9vQoh+cHvB8SrsrZPVrLUviIY6mt7jGQMBuiE44rmNqtlW1rKm62qMCoDXy1lIwD6zAy6WEDn1HPx49BVF9XYbjHCMultTjEMfazDkDhlTXFxzkvrdRXqfClHz6/LYprJ58TvPiig8k4rGz0xKKE3qoJUJlEAUIigZGSihSpKEDgFKgcApUhbDK3zdlNoixkjoII2ua131tVTsxq4Bxc7APLitCeB8Cu7npKa4XWzsmgM7Lrs+xsQ0kuZJDGJQ+M8A4DO/vXWuKe5i1V0qscvz+hylTabxRwipq6GpggdN2DZJmaGuk3nDc7zwODjG5dtsK8ttlcP/ABB584IV5Ly6nFmr2VFVS1Ne1tDDUeqSdt2dVE/SA6Y7icB/sgADB453ezYVmq2V5x/SLx/8EK7JcrRjuvldpXKS2ZbCIi0HlwiIgCLVXS/WSzM1XCsiieW6mQty+of00xMy734x3qv7t6Sq6XXFZqVtPHvAqKsNlnPe2IExj3lyrKajubdNoL9T/wAcenn2J9KjcVGzz8fagrm/qviP7VWpXuuFfcrlKZ66rqKmXeA6d5dpGc4YOAHcAFryVislzPJ67T0PTUxqk8tHttlzq7RW09fS4MsBOWuzpkjcNL2OxyI/fyXS7UbTUV4oqVtK/fKWGaF7XCSEN9otccaeON4O9cZlN29FNpYOFmnhO2Nr3RsLPEai62iEffraYnG/2WPD3HyBVobWMM2zlfgn2dEpwM/Ye1+/G9VbargLXX01d2AnMAk0xl2je9hZkHB3jJ5LsJtubVV2+vo56GsjdPTyRsAcx8Ze5pABIIOPcutbSj1Zg1sLJXwkllL9z57M7YPifDQXOU6stZTVbz9rkGTk8+jvPqe9glY5+cNDHlwcBjTh24jeqIO8YK6C07UV1sppKWVr6loA9WLn4MYx9hxIzp6fxi1dy2kctXw9t89R5b/bn2q619G4EMZKZICR9qGT2mEfL3LVr011fW3KofVVkmuZwa0YGGsY37LG534C8yyyxl4PvVOXIuffBPBFCKp1yEREGQiIhXIUIoyhGSR+9SsQVKkhPoSrEtWqv2UpnyV5oKSjllo7tUsP1r6FjjIIIjjOp+WNGPjwNdhfUTVAhNMJZfVzKJzCHu7IyhunWWZxnG7OF0hLleThqNP48Uk8YZt7zfHXJlPR09PHTWyie4UUDM6hEGhjO1JJBIGf1jx4rvPRxTdrZa9+P6VmaPdT06qlXT6NY+z2bDv664Vknlpi/wC1d4dZGHiKjTpuWPmdoihcZtTttS2cy0NvEdRdAMSE+1BSE/1mOL+jc+PR3dtJZZ5uiizUTVdayzo7peLTZoPWLjUsha4ERM3ulmcPuxRt9on5c8Ks736Q7rWmSC0sNBSnLe1Ol1ZI3rqGWt92T+kuPrK2uuFRLVVtRLPUSHL5JXZOOQAG4AcgAAF5lnlY3sew0fBqqcSt/FL6GUkkkr5JJXvklkcXSSSOc973HiXOdvJ96wRFwbPu47IxK+Lhgr7qCAdxXJs42V86PPhQvsYxy3LAscOWfBSmjFKqUexgp80I65U4VjngxUoRwUKBsZIoRCcjKnJUIoGRlMlEQZYypBwQeh+CjBTCAhTvU4WQAUkqOTAAqQsst5nAyg08gTvQsopMBTgr1UFKa2qgpNYi7UuDX6de8NLsYyOOOq7Sg2To2FjnxvqHccz72Z7o24b55XSEHPYy6nXVabpPLfkcna7PXXSVjIG6YtWJKiQHsmDO/HU9w+Cu2y0cFstlFQ02oRU7C0F32nucS9z3Y5kkk+K8FvtOjR7IAaAAAMADoAukjgDWNC1wgonmNZrp6ro1iK7HP7aX6Sx2serO011c51PSu5xNAzJMAebQQB3uHRUmXFxc5xLnOJc5ziSSSckknfnqrK9JkEskdnq2AmKnfVU02PuOm0PY4+Okj3d6rRcbW8nqeCVQjpueO73B/amVCLi2fbCItnarY+vkaSHGMyxwsa06TJI44DdXIdT3HoowcL74UQdlj6GvihmmcWxRve4cdI3D8x4DzXtms14hpvW3U38nyG6y9oaCeGT+7K7qPZ+Slb9SKaQtcDG0+xE0AfZ7ORj2nfvBO/evDfwYaKsa+jkEsjXObplha3BcCBvySG8sYPU8lxdkZdIM85Zxe2csQWF+b/Yr+TtY+JhBO4Aa3EnuXn9YeOOgeLXAH3gkLCR0mT2nLcO0HtLBr4yd7SfeSB34K0Rrwuoettb+LB6O1JAzGHNPNjs/ArJpgccNc4H8Lt3zXyDoydzyN/Ph5rOWNrmPd0GrI+W5VaWcbGiOqk+rwz6aOh+Cjs3dQop3Oc1wdk6DjJX1XNpxeD6tShdBTS3Plod0CjS/8PyX2TCZZLpXmfLDvwqNLvw/JfX/ABRRzEeCvM+eHfhHmpw/9H4rNEyyfCRhpd1b8U0HqPJZqEyyfDiY6e8ppHMnzWWETJHhryMQxnQLLHRSttabLU3N7XYdHSB3tS49qTHFsWfnw8eCtGLk8FLbK9PBzn0R7dkLZNW3SCp0kU1E4ve88Hylpa2MeGcnw71ctLRRNY06Ry5LSWK1RUkUMcUYZFGAGtby6kk78nmV1bG6WgL6NcORYPEa3VPVW8/bsQ2NjRuCzUormI569UYqYpo5GNfFI0texwy1zTyKqq57NVdM97qPMsWSRE8gSsHQE7j8D4q8ZYmyDBHFaWrtLJMkDiqygpbmzS623SvNb6eXYol7JInlkrHxvHFsjS0+RWKtmssTZGubJEyRn4ZGhw8iubq9lKRxJY2aE/2bi5v6r8/MLO6Wtj0dHHq5dLYtenU4pbG23N9C9gJeGNlZK10eC9jmnUDhwx/HevZPszcIyTDLFKByeHRu/a34rWS225w/6Skmx+Jje0b5x5XNxlHsb536PWw8NyX6MsWj2ntVQ1vayNZIebNRjOOZZ9sfHxXwvf0ZV0TnT1RmkZKx0Ol0TBGDnJEeBwHHPmq2O4kEYI4gjBHuKy1yYwHvA6BzsLI6IZzHoYP4O08wnlfM+1S2nDpAHMezU7SX6QSO8Arxtgo3khzmtHElrwN3cOZWZYw7y0HxQMYODW+4LrCCj3Zqlw+c1iTX1PLPBEwllO+R4O/248OxyzglZMgdhu9zccdQGQf0QF6eCLt4j2FXCa4tObz9DFrGsAa3GPj71KlFyxk+vGKisIxUoirgghFOFCYBGEWSYTBGDFFJ0jivXTW65VRHYU0pacfWPGiPHXU/A8sqVBvY5WW11rM3g8a+kUU08jYoI3yyu4NjGTjqegXTUOycjy11ZK53AmKnBDfAyOGfIBdjbbBDA1rIYGRs3ZDBjJ6uPEnxK7x07fxHxNTxqqHSlZf0OStOyrnuZJXAPOQWwMJ0D/iOHHw4eKsO22lrAzLAA0AAAYAA4AALZUlsjjAy3etoyNrBgBa4xUVhHmb9TZqJc1jyYQwtjAAGML7oisZwiIgCggHkpRAfF8LHcQF5ZbfC/PsjyWwRAaCazxuzhoWulsnEhvkuvwFBY08kBwFRYhICJIWSDpIxrh/eC1E+y1A4n+SBp6xF8fwacfBWk6CM8WhfJ1FCc+yFDinudYXWV/BJr3Khl2TgyezkqWdxLHj4gH4rxSbLVIzoqmnoJInD4tcfkrjfbYXfdC877REc+yFR1xfY2w4pqobT/Qpt+zl1bnSadw7nvaf7zf2r4Osl5b/Ng78ssR+bgrkdZYz91fF1jb+FV8GJpjxzVLfD9inDabuONFN7iw/JywNuug/mVT7oyfkrhdYxv9lYGx/oqvgLzOy49d3ivqVD9H3P/cqn/wBpykWy6nhRVHvaB8yrd+g/0VIsf6Kfd15h8eu/6oqUWa8uxikcPzPiHzcvuzZ+8PxlsDPzyZ/6AVa7bG3p8F92WSPop8GJylxzUvZJf76lVxbLVbiO0qY29RHG5/xcWrYwbI0uR2jqiXuLgxvkwZ+KsxloiH3QvVHboW49kK6qiuxks4nqrN5/kcJR7N0sJaYqSJrh97Tqf+u/Lvit7T2XeC5q6dtNE37o3L6hjRwC6bGCU5TeZPJqqe1RR4y0LYxwRs4NX2wpQqQAApREAREQBERAEREAREQBERAEREAREQBMDoiICMDp8EwOg8lKICMDoPJMDoPJSiAjA6fBTgIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIiAIiIAiIgCIoQH/2Q=="
-                alt="Product 4"
-                class="p-1 bg-white w-10 h-10 object-contain mr-1" />
-            <img src="https://www.bhphotovideo.com/images/images1000x1000/beats_by_dr_dre_900_00097_01_mixr_on_ear_headphone_971557.jpg" alt="Product 1" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
-            <div class="size-12 flex justify-center items-center">
-                <img class="bg-white w-10 h-10 object-contain absolute brightness-50" src="https://th.bing.com/th/id/OIP.cYg1vbmxnraKdPe529sYXgHaIR?w=175&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt="Product 1" />
-                <span class="relative text-white font-medium">+1</span>
-            </div>
-        </div>
-        <div class="flex gap-2  relative right-4">
-            <div class="w-24 h-6 bg-black rounded-full"></div>
-            <div class="w-36 h-6 bg-gray-200 rounded-full"></div>
-        </div>
-    </div>
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        <div
+                            class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10">
+                        </div>
+                        <section class="flex">
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-40 h-24 flex justify-center items-center z-[4] transform -rotate-[10deg] bg-[#fffc8d] rounded-2xl uppercase font-bold">
+                                    sneakhub</div>
+                                <div
+                                    class="relative bottom-14 w-40 h-24 flex justify-center items-center z-[3] transform -rotate-[20deg] bg-[#e8e6d4] rounded-2xl uppercase text-xs font-medium text-xs">
+                                    <div class="size-16 border border-2 border-gray-900 rounded-full"></div>
+                                </div>
+                                <div
+                                    class="relative bottom-[100px] w-40 h-24 flex justify-center items-center z-[2] transform -rotate-[30deg] bg-[#a9cf78] text-white text-xl rounded-2xl capitalize font-serif">
+                                    logical</div>
+                                <div
+                                    class="relative bottom-[140px] w-40 h-24 flex justify-center items-center z-[1] transform -rotate-[40deg] bg-[#e12321] rounded-2xl uppercase text-[4rem] text-white font-bold">
+                                    rb</div>
+                            </div>
 
-</div>
-                                    <!-- mirror -->
-                               <div class="w-full h-32 bg-gradient-to-b from-gray-400 to-gray-100  opacity-20 rounded-t-xl">
-
-                              </div>
-                               </div>
-                                
-                            </section>
+                            <div class="flex flex-col">
+                                <div
+                                    class="w-40 h-24 flex justify-center items-center z-[4] transform -rotate-[10deg] bg-[#615151] text-gray-100 rounded-2xl uppercase text-xs font-mono">
+                                    gemini <br />
+                                    appliances
+                                </div>
+                                <div
+                                    class="relative bottom-14 w-40 h-24 flex justify-center items-center z-[3] transform -rotate-[20deg] bg-emerald-700 text-yellow-400 rounded-2xl uppercase text-xl font-medium">
+                                    sample</div>
+                                <div
+                                    class="relative bottom-[100px] w-40 h-24 flex justify-center items-center z-[2] transform -rotate-[30deg] bg-lime-800 text-white rounded-2xl uppercase text-xs font-bold">
+                                    logo</div>
+                                <div
+                                    class="relative bottom-[140px] w-40 h-24 flex justify-center items-center z-[1] transform -rotate-[40deg] bg-white text-gray-900 rounded-2xl uppercase text-xl font-medium">
+                                    made in india</div>
+                            </div>
                         </section>
+                    </section>
 
-                        <!-- <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        <div
+                            class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10">
+                        </div>
+                        <section class="flex items-start  space-x-4 rounded-xl">
+
+                            <div class="flex flex-col gap-4 ">
+                                <div class="flex items-start gap-2 bg-white p-4 rounded-xl shadow-lg">
+                                    <img class="w-12 p-2 border rounded-full object-contain "
+                                        src="https://static.vecteezy.com/system/resources/previews/019/766/223/original/amazon-logo-amazon-icon-transparent-free-png.png"
+                                        alt="" />
+                                    <div class="flex flex-col ">
+                                        <div class="flex">
+                                            <fu1l class="flex flex-col ">
+                                                <h1 class="font-medium">Amazon</h1>
+                                                <p class="leading-tight text-sm">
+                                                    Payment due in 11 days
+                                                    <br />
+                                                    On its way
+                                                </p>
+                                                <!-- <div class="bg-gray-300 w-12 h-3 rounded-full"></div> -->
+                                        </div>
+                                        <div class="flex my-2 relative right-4">
+                                            <img src="https://th.bing.com/th/id/OIP.qDBvlp9cQgCVR-pjYJ7yZgHaJ4?rs=1&pid=ImgDetMain"
+                                                alt="Product 3" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
+                                            <img src="https://th.bing.com/th/id/OIP.9Sxb3w5iK6Sl72cqWAEWLQHaHa?w=179&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                                                alt="Product 2" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
+                                            <img src="data:image/jpeg;base64,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"
+                                                alt="Product 4" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
+                                            <img src="https://www.bhphotovideo.com/images/images1000x1000/beats_by_dr_dre_900_00097_01_mixr_on_ear_headphone_971557.jpg"
+                                                alt="Product 1" class="p-1 bg-white w-10 h-10 object-contain mr-1" />
+                                            <div class="size-12 flex justify-center items-center">
+                                                <img class="bg-white w-10 h-10 object-contain absolute brightness-50"
+                                                    src="https://th.bing.com/th/id/OIP.cYg1vbmxnraKdPe529sYXgHaIR?w=175&h=196&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+                                                    alt="Product 1" />
+                                                <span class="relative text-white font-medium">+1</span>
+                                            </div>
+                                        </div>
+                                        <div class="flex gap-2  relative right-4">
+                                            <div class="w-24 h-6 bg-black rounded-full"></div>
+                                            <div class="w-36 h-6 bg-gray-200 rounded-full"></div>
+                                        </div>
+                                    </div>
+
+                                </div>
+                                <!-- mirror -->
+                                <div
+                                    class="w-full h-32 bg-gradient-to-b from-gray-400 to-gray-100  opacity-20 rounded-t-xl">
+
+                                </div>
+                            </div>
+
+                        </section>
+                    </section>
+
+                    <!-- <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
                             <div class="relative h-[600px] w-full flex items-center justify-center">
                                 <div class=" flex items-center gap-4 relative w-full">
@@ -338,208 +434,218 @@
                             </div>
                         </section>
                     </div> -->
-                        <section class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                            <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10"></div>
-                            <div class="relative h-[600px] w-full flex items-center justify-center">
-                                <div class=" flex items-center gap-4 relative left-12 w-full">
-                                    <div class="w-96"><img src="/assets/last-slider.svg" alt=""></div>
-                                    <div class=" flex items-center justify-center absolute z-10 left-[18%] w-40 ">
-<video class=" rounded-xl" src="./assets/shoppable-video-1.mp4"></video>                                        
-                                    </div>
+                    <section
+                        class="section-reveal flex justify-center absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
+                        <div
+                            class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute inset-0 -z-10">
+                        </div>
+                        <div class="relative h-[600px] w-full flex items-center justify-center">
+                            <div class=" flex items-center gap-4 relative left-12 w-full">
+                                <div class="w-96"><img src="/assets/last-slider.svg" alt=""></div>
+                                <div class=" flex items-center justify-center absolute z-10 left-[18%] w-40 ">
+                                    <video class=" rounded-xl" src="./assets/shoppable-video-1.mp4"></video>
                                 </div>
                             </div>
-                        </section>
-                    </div>
+                        </div>
+                    </section>
+                </div>
 
-                    <div class="iconContainer absolute bottom-0">
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="1">
-                                <img src="./assets/svg/truck.svg" alt="" />
-                            </div>
+                <div class="iconContainer absolute bottom-0">
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="1">
+                            <img src="./assets/svg/truck.svg" alt="" />
                         </div>
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="2">
-                                <img src="./assets/svg/leaves.svg" alt="" />
-                            </div>
+                    </div>
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="2">
+                            <img src="./assets/svg/leaves.svg" alt="" />
                         </div>
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="3">
-                                <img src="./assets/svg/graph.svg" alt="" />
-                            </div>
+                    </div>
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="3">
+                            <img src="./assets/svg/graph.svg" alt="" />
                         </div>
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="4">
-                                <img src="./assets/svg/gift.svg" alt="" />
-                            </div>
+                    </div>
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="4">
+                            <img src="./assets/svg/gift.svg" alt="" />
                         </div>
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="5">
-                                <img src="./assets/svg/time.svg" alt="" />
-                            </div>
+                    </div>
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="5">
+                            <img src="./assets/svg/time.svg" alt="" />
                         </div>
-                        <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white" data-index="6">
-                                <img src="./assets/svg/video.svg" alt="" />
-                            </div>
+                    </div>
+                    <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
+                        <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            data-index="6">
+                            <img src="./assets/svg/video.svg" alt="" />
                         </div>
                     </div>
                 </div>
-            </section>
-        </div>
+            </div>
+        </section>
+    </div>
 
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-        <script>
-            gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
+    <script>
+        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-            const iconWrappers = document.querySelectorAll('.icon-wrapper');
-            const iconsSelector = document.querySelectorAll('.icon');
-            const imagesSelector = document.querySelectorAll('.section-reveal');
-            const radius = 200;
-            const totalIcons = iconsSelector.length;
+        const iconWrappers = document.querySelectorAll('.icon-wrapper');
+        const iconsSelector = document.querySelectorAll('.icon');
+        const imagesSelector = document.querySelectorAll('.section-reveal');
+        const radius = 200;
+        const totalIcons = iconsSelector.length;
 
-            // Initialize images
-            gsap.set(imagesSelector, { opacity: 0 });
-            gsap.set(imagesSelector[0], { opacity: 1 });
+        // Initialize images
+        gsap.set(imagesSelector, { opacity: 0 });
+        gsap.set(imagesSelector[0], { opacity: 1 });
 
-            // Function to calculate icon positions based on progress
-            function setIconPositions(progress) {
-                iconWrappers.forEach((wrapper, index) => {
-                    const startAngledeg = -90;
-                    const startAngle = startAngledeg * (Math.PI / 180);
-                    const arcLength = Math.PI;
-                    const angle = startAngle + (index / (totalIcons - 1)) * arcLength - progress * arcLength;
+        // Function to calculate icon positions based on progress
+        function setIconPositions(progress) {
+            iconWrappers.forEach((wrapper, index) => {
+                const startAngledeg = -90;
+                const startAngle = startAngledeg * (Math.PI / 180);
+                const arcLength = Math.PI;
+                const angle = startAngle + (index / (totalIcons - 1)) * arcLength - progress * arcLength;
 
-                    const x = Math.cos(angle) * radius;
-                    const y = Math.sin(angle) * radius;
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
 
-                    gsap.set(wrapper, {
-                        x: x,
-                        y: y,
-                        rotation: 0,
+                gsap.set(wrapper, {
+                    x: x,
+                    y: y,
+                    rotation: 0,
+                });
+            });
+        }
+
+        // Function to calculate target progress for centering an icon
+        function getTargetProgressForIndex(index) {
+            return index / (totalIcons - 1);
+        }
+
+        // Define background colors
+        const bgGrads = [
+            '#f59e0b', // orange
+            '#22c55e', // green
+            '#d946ef', // fuschia
+            '#22c55e', // green
+            '#fb923c', // amber
+            '#9333ea', // violet
+        ];
+
+        // Function to update visible image
+        function updateVisibleImage(closestIndex) {
+            if (closestIndex !== -1) {
+                // Hide all images and reset gradient backgrounds
+                imagesSelector.forEach((section, idx) => {
+                    const gradientDiv = section.querySelector('.changeBlockGradient');
+                    gsap.to(section, {
+                        opacity: 0,
+                        duration: 0.3,
+                    });
+                    gsap.to(gradientDiv, {
+                        backgroundColor: 'transparent',
+                        duration: 0.3,
                     });
                 });
+
+                // Show active image and set its gradient background
+                const activeSection = imagesSelector[closestIndex];
+                const activeGradient = activeSection.querySelector('.changeBlockGradient');
+
+                gsap.to(activeSection, {
+                    opacity: 1,
+                    duration: 0.3,
+                });
+                gsap.to(activeGradient, {
+                    backgroundColor: bgGrads[closestIndex],
+                    duration: 0.3,
+                });
             }
+        }
 
-            // Function to calculate target progress for centering an icon
-            function getTargetProgressForIndex(index) {
-                return index / (totalIcons - 1);
-            }
+        // Set initial positions
+        setIconPositions(0);
 
-            // Define background colors
-            const bgGrads = [
-                '#f59e0b', // orange
-                '#22c55e', // green
-                '#d946ef', // fuschia
-                '#22c55e', // green
-                '#fb923c', // amber
-                '#9333ea', // violet
-            ];
+        // Create the scroll trigger animation
+        gsap.to(
+            {},
+            {
+                scrollTrigger: {
+                    trigger: '#animation-section',
+                    start: 'top top',
+                    end: 'bottom bottom',
+                    scrub: 1,
+                    onUpdate: (self) => {
+                        setIconPositions(self.progress);
 
-            // Function to update visible image
-            function updateVisibleImage(closestIndex) {
-                if (closestIndex !== -1) {
-                    // Hide all images and reset gradient backgrounds
-                    imagesSelector.forEach((section, idx) => {
-                        const gradientDiv = section.querySelector('.changeBlockGradient');
-                        gsap.to(section, {
-                            opacity: 0,
-                            duration: 0.3,
+                        let closestIndex = -1;
+                        let minDistance = Infinity;
+
+                        iconsSelector.forEach((icon, index) => {
+                            const rect = icon.getBoundingClientRect();
+                            const centerX = rect.left + rect.width / 2;
+                            const centerY = rect.top + rect.height / 2;
+                            const distanceToCenter = Math.sqrt((window.innerWidth / 2 - centerX) ** 2 + (window.innerHeight / 2 - centerY) ** 2);
+
+                            if (distanceToCenter < minDistance) {
+                                minDistance = distanceToCenter;
+                                closestIndex = index;
+                            }
                         });
-                        gsap.to(gradientDiv, {
-                            backgroundColor: 'transparent',
-                            duration: 0.3,
-                        });
-                    });
 
-                    // Show active image and set its gradient background
-                    const activeSection = imagesSelector[closestIndex];
-                    const activeGradient = activeSection.querySelector('.changeBlockGradient');
-
-                    gsap.to(activeSection, {
-                        opacity: 1,
-                        duration: 0.3,
-                    });
-                    gsap.to(activeGradient, {
-                        backgroundColor: bgGrads[closestIndex],
-                        duration: 0.3,
-                    });
-                }
-            }
-
-            // Set initial positions
-            setIconPositions(0);
-
-            // Create the scroll trigger animation
-            gsap.to(
-                {},
-                {
-                    scrollTrigger: {
-                        trigger: '#animation-section',
-                        start: 'top top',
-                        end: 'bottom bottom',
-                        scrub: 1,
-                        onUpdate: (self) => {
-                            setIconPositions(self.progress);
-
-                            let closestIndex = -1;
-                            let minDistance = Infinity;
-
-                            iconsSelector.forEach((icon, index) => {
-                                const rect = icon.getBoundingClientRect();
-                                const centerX = rect.left + rect.width / 2;
-                                const centerY = rect.top + rect.height / 2;
-                                const distanceToCenter = Math.sqrt((window.innerWidth / 2 - centerX) ** 2 + (window.innerHeight / 2 - centerY) ** 2);
-
-                                if (distanceToCenter < minDistance) {
-                                    minDistance = distanceToCenter;
-                                    closestIndex = index;
-                                }
-                            });
-
-                            updateVisibleImage(closestIndex);
-                        },
+                        updateVisibleImage(closestIndex);
                     },
                 },
-            );
+            },
+        );
 
-            // Initial animation for icons appearing
-            gsap.from(iconsSelector, {
-                scale: 0,
-                opacity: 0,
-                duration: 1,
-                stagger: 0.1,
-                ease: 'back.out(1.7)',
+        // Initial animation for icons appearing
+        gsap.from(iconsSelector, {
+            scale: 0,
+            opacity: 0,
+            duration: 1,
+            stagger: 0.1,
+            ease: 'back.out(1.7)',
+        });
+
+        // Add click handlers to icons
+        iconsSelector.forEach((icon, index) => {
+            // Hover animations
+            icon.addEventListener('mouseenter', () => {
+                gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out' });
             });
 
-            // Add click handlers to icons
-            iconsSelector.forEach((icon, index) => {
-                // Hover animations
-                icon.addEventListener('mouseenter', () => {
-                    gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out' });
-                });
+            icon.addEventListener('mouseleave', () => {
+                gsap.to(icon, { scale: 1, duration: 0.3, ease: 'back.out' });
+            });
 
-                icon.addEventListener('mouseleave', () => {
-                    gsap.to(icon, { scale: 1, duration: 0.3, ease: 'back.out' });
-                });
+            // Click to center animation
+            icon.addEventListener('click', () => {
+                const targetProgress = getTargetProgressForIndex(index);
+                const section = document.querySelector('#animation-section');
+                const scrollAmount = targetProgress * (section.offsetHeight - window.innerHeight);
 
-                // Click to center animation
-                icon.addEventListener('click', () => {
-                    const targetProgress = getTargetProgressForIndex(index);
-                    const section = document.querySelector('#animation-section');
-                    const scrollAmount = targetProgress * (section.offsetHeight - window.innerHeight);
-
-                    gsap.to(window, {
-                        duration: 1,
-                        scrollTo: {
-                            y: scrollAmount,
-                            autoKill: false,
-                        },
-                        ease: 'power2.inOut',
-                    });
+                gsap.to(window, {
+                    duration: 1,
+                    scrollTo: {
+                        y: scrollAmount,
+                        autoKill: false,
+                    },
+                    ease: 'power2.inOut',
                 });
             });
-        </script>
-    </body>
+        });
+    </script>
+</body>
+
 </html>
