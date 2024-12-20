@@ -8,10 +8,7 @@
     </head>
     <body>
    
-  
-        <div class="h-[200vh] flex  justify-center items-center">
-            <div class="changeGradient sticky top-2/4 size-48 blur-2xl rounded-full" id="gradient-div"></div>
-        </div>
+   
 
         <!-- Animation section with specific ID -->
         <div class="relative w-full">
@@ -70,26 +67,6 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
         <script>
             gsap.registerPlugin(ScrollTrigger);
-            gsap.to({}, {
-  scrollTrigger: {
-    trigger: '#animation-section',
-    start: 'top top',
-    end: 'bottom bottom',
-    scrub: 1,
-    // pin:true,
-    markers: true, // Enable markers for debugging (optional)
-    onUpdate: (self) => {
-      const progress = self.progress;  // Get the scroll progress (0 to 1)
-console.log(progress);
-
-      // Calculate a background color based on scroll progress
-      const backgroundColor = `hsl(${progress * 360}, 100%, 50%)`; // Adjust hue based on progress
-
-      // Update the background color of the div
-      document.getElementById('gradient-div').style.backgroundColor = backgroundColor;
-    }
-  }
-});
 
             const iconWrappers = document.querySelectorAll('.icon-wrapper');
             const iconsSelector = document.querySelectorAll('.icon');
