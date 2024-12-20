@@ -451,7 +451,7 @@
                     </section>
                 </div>
 
-                <div class="iconContainer absolute bottom-0">
+                <div class="iconContainer absolute -bottom-8">
                     <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
                         <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
                             data-index="1">
@@ -496,159 +496,169 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollToPlugin.min.js"></script>
-    <script>
-        gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        const iconWrappers = document.querySelectorAll('.icon-wrapper');
-        const iconsSelector = document.querySelectorAll('.icon');
-        const imagesSelector = document.querySelectorAll('.section-reveal');
-        const radius = 200;
-        const totalIcons = iconsSelector.length;
+<script>
+    gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-        // Initialize images
-        gsap.set(imagesSelector, { opacity: 0 });
-        gsap.set(imagesSelector[0], { opacity: 1 });
+const iconWrappers = document.querySelectorAll('.icon-wrapper');
+const iconsSelector = document.querySelectorAll('.icon');
+const imagesSelector = document.querySelectorAll('.section-reveal');
+const radius = 200;
+const totalIcons = iconsSelector.length;
 
-        // Function to calculate icon positions based on progress
-        function setIconPositions(progress) {
-            iconWrappers.forEach((wrapper, index) => {
-                const startAngledeg = -90;
-                const startAngle = startAngledeg * (Math.PI / 180);
-                const arcLength = (3.14/180)*130;
-                // const arcLength = Math.PI;
-                // to prevent icon tilting
-                const angle = startAngle + (index / (totalIcons - 1)) * arcLength - progress * arcLength;
+// Initialize images
+gsap.set(imagesSelector, { opacity: 0 });
+gsap.set(imagesSelector[0], { opacity: 1 });
+// Set initial opacity for all icons
+gsap.set(iconsSelector, { opacity: 0.35 });
+gsap.set(iconsSelector[0], { opacity: 1 });
 
-                const x = Math.cos(angle) * radius;
-                const y = Math.sin(angle) * radius;
+// Function to calculate icon positions based on progress
+function setIconPositions(progress) {
+    iconWrappers.forEach((wrapper, index) => {
+        const startAngledeg = -90;
+        const startAngle = startAngledeg * (Math.PI / 180);
+        const arcLength = (3.14/180)*130;
+        const angle = startAngle + (index / (totalIcons - 1)) * arcLength - progress * arcLength;
 
-                gsap.set(wrapper, {
-                    x: x,
-                    y: y,
-                    rotation: 0,
-                });
+        const x = Math.cos(angle) * radius;
+        const y = Math.sin(angle) * radius;
+
+        gsap.set(wrapper, {
+            x: x,
+            y: y,
+            rotation: 0,
+        });
+    });
+}
+
+// Function to calculate target progress for centering an icon
+function getTargetProgressForIndex(index) {
+    return index / (totalIcons - 1);
+}
+
+// Define background colors
+const bgGrads = [
+    '#f59e0b', // orange
+    '#22c55e', // green
+    '#d946ef', // fuschia
+    '#a3e635', // green
+    '#fb923c', // amber
+    '#9333ea', // violet
+];
+
+// Function to update visible image and icon opacities
+function updateVisibleImage(closestIndex) {
+    if (closestIndex !== -1) {
+        // Hide all images and reset gradient backgrounds
+        imagesSelector.forEach((section, idx) => {
+            const gradientDiv = section.querySelector('.changeBlockGradient');
+            gsap.to(section, {
+                opacity: 0,
+                duration: 0.3,
             });
-        }
+            gsap.to(gradientDiv, {
+                backgroundColor: 'transparent',
+                duration: 0.3,
+            });
+        });
 
-        // Function to calculate target progress for centering an icon
-        function getTargetProgressForIndex(index) {
-            return index / (totalIcons - 1);
-        }
+        // Update icon opacities
+        iconsSelector.forEach((icon, idx) => {
+            gsap.to(icon, {
+                opacity: idx === closestIndex ? 1 : 0.35,
+                duration: 0.3,
+            });
+        });
 
-        // Define background colors
-        const bgGrads = [
-            '#f59e0b', // orange
-            '#22c55e', // green
-            '#d946ef', // fuschia
-            '#a3e635', // green
-            '#fb923c', // amber
-            '#9333ea', // violet
-        ];
+        // Show active image and set its gradient background
+        const activeSection = imagesSelector[closestIndex];
+        const activeGradient = activeSection.querySelector('.changeBlockGradient');
 
-        // Function to update visible image
-        function updateVisibleImage(closestIndex) {
-            if (closestIndex !== -1) {
-                // Hide all images and reset gradient backgrounds
-                imagesSelector.forEach((section, idx) => {
-                    const gradientDiv = section.querySelector('.changeBlockGradient');
-                    gsap.to(section, {
-                        opacity: 0,
-                        duration: 0.3,
-                    });
-                    gsap.to(gradientDiv, {
-                        backgroundColor: 'transparent',
-                        duration: 0.3,
-                    });
-                });
+        gsap.to(activeSection, {
+            opacity: 1,
+            duration: 0.3,
+        });
+        gsap.to(activeGradient, {
+            backgroundColor: bgGrads[closestIndex],
+            duration: 0.3,
+        });
+    }
+}
 
-                // Show active image and set its gradient background
-                const activeSection = imagesSelector[closestIndex];
-                const activeGradient = activeSection.querySelector('.changeBlockGradient');
+// Set initial positions
+setIconPositions(0);
 
-                gsap.to(activeSection, {
-                    opacity: 1,
-                    duration: 0.3,
-                });
-                gsap.to(activeGradient, {
-                    backgroundColor: bgGrads[closestIndex],
-                    duration: 0.3,
-                });
-            }
-        }
+// Create the scroll trigger animation
+gsap.to({}, {
+    scrollTrigger: {
+        trigger: '#animation-section',
+        start: 'top top',
+        end: 'bottom bottom',
+        scrub: 1,
+        onUpdate: (self) => {
+            setIconPositions(self.progress);
 
-        // Set initial positions
-        setIconPositions(0);
+            let closestIndex = -1;
+            let minDistance = Infinity;
 
-        // Create the scroll trigger animation
-        gsap.to(
-            {},
-            {
-                scrollTrigger: {
-                    trigger: '#animation-section',
-                    start: 'top top',
-                    end: 'bottom bottom',
-                    scrub: 1,
-                    onUpdate: (self) => {
-                        setIconPositions(self.progress);
+            iconsSelector.forEach((icon, index) => {
+                const rect = icon.getBoundingClientRect();
+                const centerX = rect.left + rect.width / 2;
+                const centerY = rect.top + rect.height / 2;
+                const distanceToCenter = Math.sqrt(
+                    (window.innerWidth / 2 - centerX) ** 2 + 
+                    (window.innerHeight / 2 - centerY) ** 2
+                );
 
-                        let closestIndex = -1;
-                        let minDistance = Infinity;
+                if (distanceToCenter < minDistance) {
+                    minDistance = distanceToCenter;
+                    closestIndex = index;
+                }
+            });
 
-                        iconsSelector.forEach((icon, index) => {
-                            const rect = icon.getBoundingClientRect();
-                            const centerX = rect.left + rect.width / 2;
-                            const centerY = rect.top + rect.height / 2;
-                            const distanceToCenter = Math.sqrt((window.innerWidth / 2 - centerX) ** 2 + (window.innerHeight / 2 - centerY) ** 2);
+            updateVisibleImage(closestIndex);
+        },
+    },
+});
 
-                            if (distanceToCenter < minDistance) {
-                                minDistance = distanceToCenter;
-                                closestIndex = index;
-                            }
-                        });
+// Initial animation for icons appearing
+gsap.from(iconsSelector, {
+    scale: 0,
+    opacity: 0,
+    duration: 1,
+    stagger: 0.1,
+    ease: 'back.out(1.7)',
+});
 
-                        updateVisibleImage(closestIndex);
-                    },
-                },
-            },
-        );
+// Add click handlers to icons
+iconsSelector.forEach((icon, index) => {
+    // Hover animations
+    icon.addEventListener('mouseenter', () => {
+        gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out' });
+    });
 
-        // Initial animation for icons appearing
-        gsap.from(iconsSelector, {
-            scale: 0,
-            opacity: 0,
+    icon.addEventListener('mouseleave', () => {
+        gsap.to(icon, { scale: 1, duration: 0.3, ease: 'back.out' });
+    });
+
+    // Click to center animation
+    icon.addEventListener('click', () => {
+        const targetProgress = getTargetProgressForIndex(index);
+        const section = document.querySelector('#animation-section');
+        const scrollAmount = targetProgress * (section.offsetHeight - window.innerHeight);
+
+        gsap.to(window, {
             duration: 1,
-            stagger: 0.1,
-            ease: 'back.out(1.7)',
+            scrollTo: {
+                y: scrollAmount,
+                autoKill: false,
+            },
+            ease: 'power2.inOut',
         });
-
-        // Add click handlers to icons
-        iconsSelector.forEach((icon, index) => {
-            // Hover animations
-            icon.addEventListener('mouseenter', () => {
-                gsap.to(icon, { scale: 1.1, duration: 0.3, ease: 'back.out' });
-            });
-
-            icon.addEventListener('mouseleave', () => {
-                gsap.to(icon, { scale: 1, duration: 0.3, ease: 'back.out' });
-            });
-
-            // Click to center animation
-            icon.addEventListener('click', () => {
-                const targetProgress = getTargetProgressForIndex(index);
-                const section = document.querySelector('#animation-section');
-                const scrollAmount = targetProgress * (section.offsetHeight - window.innerHeight);
-
-                gsap.to(window, {
-                    duration: 1,
-                    scrollTo: {
-                        y: scrollAmount,
-                        autoKill: false,
-                    },
-                    ease: 'power2.inOut',
-                });
-            });
-        });
-    </script>
+    });
+});
+</script>
 </body>
 
 </html>
