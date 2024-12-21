@@ -551,7 +551,7 @@ const bgGrads = [
 function updateVisibleImage(closestIndex) {
     if (closestIndex !== -1) {
         imagesSelector.forEach((section, idx) => {
-            const gradientDiv = section.querySelector('.changeBlockGradient');
+            const elemGradientDiv = section.querySelector('.changeBlockGradient');
             const addSpringGrowVar = section.querySelectorAll('.addAnmSpringGrow');
             const addFadeVar = section.querySelectorAll('.addAnmFade');
 
@@ -559,19 +559,31 @@ function updateVisibleImage(closestIndex) {
             if (idx !== closestIndex) {
                 gsap.to(section, {
                     opacity: 0,
+                    y: 20, // Slide down blocks when becoming inactive
                     duration: 0.3,
+                    ease: "power1.out",
                 });
-                gsap.to(gradientDiv, {
+                gsap.to(elemGradientDiv, {
                     backgroundColor: 'transparent',
                     duration: 0.3,
                 });
             } else {
-                // Animate the active section
-                gsap.to(section, {
-                    opacity: 1,
-                    duration: 0.3,
-                });
-                gsap.to(gradientDiv, {
+                // Animate the active section with slide-up
+                gsap.fromTo(
+                    section,
+                    {
+                        opacity: 0,
+                        y: 30, // Slide up from below
+                        transformOrigin: "bottom",
+                    },
+                    {
+                        opacity: 1,
+                        y: 0, // Final position
+                        duration: 0.3, // modifies the appearing animation  
+                        ease: "power2.out",
+                    }
+                );
+                gsap.to(elemGradientDiv, {
                     backgroundColor: bgGrads[closestIndex],
                     duration: 0.3,
                 });
@@ -654,7 +666,7 @@ gsap.from(iconsSelector, {
     opacity: 0,
     duration: 1,
     stagger: 0.1,
-    ease: 'back.out(1.7)',
+    ease: 'back.out',
 });
 
 // Add click handlers to icons
