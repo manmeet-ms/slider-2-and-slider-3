@@ -9,16 +9,14 @@
     <!--  
             /* 🔴 DO NOT import these fonts SEGMENT*/
         -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
-
+    
+        
     <style>
+        @import url(https://fonts.googleapis.com/css?family=Plus+Jakarta+Sans:200,300,regular,500,600,700,800,200italic,300italic,italic,500italic,600italic,700italic,800italic);
+        @import url(https://fonts.googleapis.com/css?family=Inter:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
         /* 🔴 DO NOT USE THIS STYLE SEGMENT*/
         * {
-            font-family: 'Manrope';
+            font-family: 'Plus Jakarta Sans';
             font-optical-sizing: auto;
         }
 
@@ -28,8 +26,8 @@
         h4,
         h5,
         h6 {
-            font-family: 'Manrope';
-            font-weight: 800;
+            font-family: 'Plus Jakarta Sans';
+            /* font-weight: 800;     */
         }
 
         .font-mono {
@@ -52,15 +50,15 @@
     <div class="w-full">
         <section id="animation-section" class=" min-h-[300vh] w-full">
             <div class="sticky top-0 h-screen w-full flex flex-col items-center justify-center overflow-hidden">
-                <h1 class="text-5xl font-extrabold text-orange-600 absolute top-12">How we Match?</h1>
+                <h1 class="text-5xl font-extrabold text-orange-500 relative bottom-12">How we Match?</h1>
 
                 <div class="flex flex-col items-center  ">
                     <div
                         class="image-container relative bottom-6 bg-[url('./assets/hourglass.jpeg')] -z-20 bg-contain w-[400px] h-[400px] bg-no-repeat flex justify-center items-center">
                         <section
-                            class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-xl">
+                            class="section-reveal flex justify-center  top-28 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-xl">
                             <div
-                                class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400 absolute">
+                                class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-amber-500 absolute">
                             </div>
                             <section class="  flex items-center justify-center">
                                 <svg class="absolute w-28 left-8 z-40" xmlns="http://www.w3.org/2000/svg"
@@ -129,7 +127,7 @@
                         <section
                             class="section-reveal sectionSpringGrow sectionSpringGrow flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div
-                                class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
+                                class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-orange-400/40 absolute -z-10">
                             </div>
                             <section class="  ">
                                 <div class="bg-white rounded-3xl p-6 shadow-md">
@@ -231,7 +229,7 @@
                         <section
                             class="section-reveal sectionSpringGrow flex justify-center  top-32 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div
-                                class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
+                                class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-orange-400/40 absolute -z-10">
                             </div>
                             <section class="  ">
                                 <div class="bg-white rounded-3xl p-6 shadow-md">
@@ -332,7 +330,7 @@
                         <section
                             class="section-reveal flex justify-center absolute top-24 w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div
-                                class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
+                                class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-orange-400/40 absolute -z-10">
                             </div>
                             <section class="flex -space-x-8">
                                 <div class="flex flex-col">
@@ -373,7 +371,7 @@
                         <section
                             class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
                             <div
-                                class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10">
+                                class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-orange-400/40 absolute -z-10">
                             </div>
                             <section class="flex items-start  space-x-4 rounded-xl">
 
@@ -431,7 +429,7 @@
                         </section>
 
                         <!-- <section class="section-reveal flex justify-center  top-24 absolute w-full opacity-0 transition-opacity duration-400 ease-[ease] rounded-2xl">
-                    <div class="changeBlockGradient w-48 h-72 opacity-50 top-12 blur-[6rem] bg-orange-400/40 absolute -z-10"></div>
+                    <div class="changeBlockGradient w-36 h-96 opacity-50 -top-8 blur-[6rem] bg-orange-400/40 absolute -z-10"></div>
                     <div class="relative h-[600px] w-full flex items-center justify-center">
                         <div class=" flex items-center gap-4 relative w-full">
                             <div class=""><img src="https://placehold.co/200x300/black/white" alt=""></div>
@@ -462,37 +460,37 @@
 
                     <div class="iconContainer relative top-[350px] ">
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-orange-600/30 shadow-orange-600/10 rounded-2xl bg-white"
                                 data-index="1">
                                 <img src="./assets/svg/truck.svg" alt="" />
                             </div>
                         </div>
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-green-600/30 shadow-green-600/10 rounded-2xl bg-white"
                                 data-index="2">
                                 <img src="./assets/svg/leaves.svg" alt="" />
                             </div>
                         </div>
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-fuchsia-600/30 shadow-fuchsia-600/10 rounded-2xl bg-white"
                                 data-index="3">
                                 <img src="./assets/svg/graph.svg" alt="" />
                             </div>
                         </div>
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-emerald-600/30 shadow-emerald-600/10 rounded-2xl bg-white"
                                 data-index="4">
                                 <img src="./assets/svg/gift.svg" alt="" />
                             </div>
                         </div>
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-amber-600/30 shadow-amber-600/10 rounded-2xl bg-white"
                                 data-index="5">
                                 <img src="./assets/svg/time.svg" alt="" />
                             </div>
                         </div>
                         <div class="icon-wrapper cursor-pointer absolute w-16 h-16">
-                            <div class="icon absolute w-full h-full flex items-center justify-center text-2xl shadow-md rounded-2xl bg-white"
+                            <div class="icon absolute w-full h-full flex items-center justify-center shadow-md border-purple-600/30 shadow-purple-600/10 rounded-2xl bg-white"
                                 data-index="6">
                                 <img src="./assets/svg/video.svg" alt="" />
                             </div>
@@ -522,8 +520,11 @@
         gsap.set(imagesSelector, { opacity: 0 });
         gsap.set(imagesSelector[0], { opacity: 1 });
         // Set initial opacity for all icons
-        gsap.set(iconsSelector, { opacity: 0.35 });
-        gsap.set(iconsSelector[0], { opacity: 1 });
+        gsap.set(iconsSelector, { opacity: 0 });
+
+        gsap.set(iconsSelector[0], { opacity: 1,scale:1.25 });
+        gsap.set(iconsSelector[1], { opacity:0.35, scale:0.9 });
+        gsap.set(iconsSelector[2], { opacity:0.35, scale:0.9 });
 
         // Function to calculate icon positions based on progress
         function setIconPositions(progress) {
@@ -554,7 +555,7 @@
         const bgGrads = [
             '#f59e0b', // orange
             '#22c55e', // green
-            '#d946ef', // fuschia
+            '#d946ef', // fuchsia
             '#a3e635', // green
             '#fb923c', // amber
             '#9333ea', // violet
@@ -572,7 +573,7 @@
                     if (idx !== closestIndex) {
                         gsap.to(section, {
                             opacity: 0,
-                            y: 20, // Slide down blocks when becoming inactive
+                            y: 40, // Slide down blocks when becoming inactive
                             duration: 0.3,
                             ease: "power1.out",
                         });
@@ -627,12 +628,19 @@
                     }
                 });
 
-                // Update icon opacities
+                // Update icon opacities (updated here)
                 iconsSelector.forEach((icon, idx) => {
+                    const distance = Math.abs(idx - closestIndex);
+            const isInVisibilityWindow = distance <= 2; // Show only if within 2 positions
+            
                     gsap.to(icon, {
-                        opacity: idx === closestIndex ? 1 : 0.35,
-                        scale: idx === closestIndex ? 1.25 : 0.9,
+                        opacity: isInVisibilityWindow ? (idx === closestIndex ? 1 : 0.35) : 0, // Hide icons outside window
+                scale: idx === closestIndex ? 1.25 : (isInVisibilityWindow ? 0.9 : 0.5),
+               
                         duration: 0.3,
+                        onStart: () => {
+                    icon.style.pointerEvents = isInVisibilityWindow ? 'auto' : 'none';
+                }
                     });
                 });
             }
@@ -647,7 +655,7 @@
                 trigger: '#animation-section',
                 start: 'top top',
                 end: 'bottom bottom',
-                scrub: 10, // responsiveness of block  re-renders
+                scrub: 0.5, // responsiveness of block  re-renders also controls the duration of snap detection
                 snap: {
 
                     // added snap here
@@ -726,4 +734,4 @@
 
 </body>
 
-</html>
+</html> 
