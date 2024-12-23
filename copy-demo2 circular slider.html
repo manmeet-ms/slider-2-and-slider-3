@@ -20,7 +20,7 @@
             font-family: 'Plus Jakarta Sans';
             font-optical-sizing: auto;
         }
-
+ 
         h1,
         h2,
         h3,
@@ -577,7 +577,7 @@
                         gsap.to(section, {
                             opacity: 0,
                             y: 40, // Slide down blocks when becoming inactive
-                            duration: 0.1,
+                            duration: 0.3,
                             ease: "power2.out",
                         });
                         gsap.to(elemGradientDiv, {
@@ -590,7 +590,7 @@
                             section,
                             {
                                 opacity: 0,
-                                y: 40, // Slide up from below
+                                y: 0, // Slide up from below
                                 transformOrigin: "bottom",
                             },
                             {
@@ -611,7 +611,8 @@
                             { scaleY: 0, transformOrigin: "bottom" },
                             {
                                 scaleY: 1,
-                                duration: 1.5,
+                                duration: 1,
+                                
                                 stagger: 0,
                                 ease: "elastic.out(0.5, 0.3)",
                             }
@@ -624,6 +625,7 @@
                             {
                                 opacity: 1,
                                 duration: 1,
+                                
                                 stagger: 0,
                                 ease: "power2.out",
                             }
@@ -703,6 +705,7 @@
             scale: 0,
             opacity: 0,
             duration: 1,
+            
             stagger: 0.1,
             ease: 'back.out',
         });
@@ -726,6 +729,7 @@
 
                 gsap.to(window, {
                     duration: 1,
+                    
                     scrollTo: {
                         y: scrollAmount,
                         autoKill: false,
