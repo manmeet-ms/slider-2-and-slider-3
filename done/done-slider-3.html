@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Sequential Card Release</title>
+        <script src="https://cdn.tailwindcss.com"></script>
+    </head>
+    <style>
+        .s3-filler-container {
+            height: 50vh;
+        }
+        
+        .s3-card-animation-section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start;
+            padding-top: 6rem;
+        }
+        
+        .s3-howItWorks {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #f97316;
+        }
+        
+        .s3-cards {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: -7rem;
+        }
+        
+        .s3-cardStyle {
+            position: absolute;
+        }
+        
+        .s3-card-content {
+            padding: 2rem;
+            background: linear-gradient(to bottom, #f1f5f9, #8b5cf6, #7c3aed);
+            border-radius: 2rem;
+            border: 1px solid white;
+            width: 18rem;
+            height: 24rem;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-end;
+            background-size: auto;
+            background-origin: border-box;
+            background-repeat: no-repeat;
+        }
+        
+        .s3-card-text {
+            font-size: 1.5rem;
+            color: white;
+        }
+        
+        .s3-cardOne {
+            transform: rotate(0deg);
+            z-index: 10;
+        }
+        
+        .s3-cardTwo {
+            transform: rotate(-10deg);
+            z-index: 8;
+        }
+        
+        .s3-cardThree {
+            transform: rotate(-20deg);
+            z-index: 6;
+        }
+        
+        .s3-cardFour {
+            transform: rotate(-30deg);
+            z-index: 4;
+        }
+        
+        @media (min-width: 768px) {
+            .s3-howItWorks {
+                font-size: 8rem;
+            }
+        }
+        </style>
+    <body>
+        <section class="s3-filler-container"></section>
+
+        <!-- main section -->
+        <section>
+            <div class="s3-card-animation-section">
+                <h1 class="s3-howItWorks">How it Works?</h1>
+    
+                <div class="s3-cards">
+                    <div class="s3-cardStyle s3-cardOne">
+                        <div class="s3-card-content">
+                            <h6 class="s3-card-text">1. Download the Swag app today.</h6>
+                        </div>
+                    </div>
+                    <div class="s3-cardStyle s3-cardTwo">
+                        <div class="s3-card-content">
+                            <h6 class="s3-card-text">2. Set up your Swag Spend Account and instantly set up your digital Visa Debit card.</h6>
+                        </div>
+                    </div>
+                    <div class="s3-cardStyle s3-cardThree">
+                        <div class="s3-card-content">
+                            <h6 class="s3-card-text">3. Spend and save on Cashback offers and in the Swag store.</h6>
+                        </div>
+                    </div>
+                    <div class="s3-cardStyle s3-cardFour">
+                        <div class="s3-card-content">
+                            <h6 class="s3-card-text">4. Receive your physical Swag Visa Debit card in the mail after 5-7 days.</h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+        <script>
+            
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    // markers: true,
+                    trigger: '.s3-card-animation-section',
+                    start: 'top 40% ',
+                    end: '+=1500',
+                    scrub: 1,
+                    pin: true,
+                },
+            });
+           
+            const cardAnimationConfig = {
+                yPercent: -500,
+                ease: 'power2.in',
+                duration: 1,
+                rotate: -150,
+            };
+
+            // Add text animation at the appropriate time
+            tl.to('.s3-cardOne', { ...cardAnimationConfig });
+            tl.to('.s3-cardTwo', { ...cardAnimationConfig });
+            tl.to('.s3-cardThree', { ...cardAnimationConfig });
+            tl.to('.s3-cardFour', { ...cardAnimationConfig });
+            
+            // Add text scale down animation after the last card
+            tl.to('.s3-howItWorks', {
+                scale: 0,
+                opacity: 0,
+                ease: 'slow.in',
+                duration: 1
+            }, '>-0.7'); // This starts the text animation slightly before the last card finishes
+        </script>
+    </body>
+</html>

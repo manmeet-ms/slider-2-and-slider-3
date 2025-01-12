@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* Your provided animation styles */
+.s1-card-body {
+    position: relative;
+    overflow: hidden;
+    
+    border: none;
+    background-clip: padding-box;
+    width: 50%;
+    background: white;
+    border-radius: 36px;
+    padding: 0;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.s1-card-body::before {
+    content: "";
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    border-radius: 36px;
+    background: linear-gradient(45deg, #ff000040, #ffd70040, #ffffff, #ffd70040, #ff000040);
+    background-size: 400% 400%;
+    z-index: 0;
+    animation: borderSparkle 8s linear infinite;
+    mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask-composite: destination-out;
+    border: 4px solid transparent;
+}
+
+.s1-card-body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 36px;
+    background: transparent;
+    box-shadow: 
+        0 0 10px rgba(255, 215, 0, 0.6),
+        0 0 20px rgba(255, 215, 0, 0.4),
+        0 0 30px rgba(255, 215, 0, 0.2);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Additional styles to replace Tailwind */
+main {
+    margin: 6rem 0;
+}
+
+.s1-card-container {
+    display: flex;
+
+    height: 45vh;
+    position: sticky;
+    top: 3rem;
+    justify-content: center;
+    align-items: center;
+}
+
+.s1-card-container.tall {
+    height: 100vh;
+}
+
+.s1-content-wrapper {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: row ;
+    align-items: center;
+}
+
+.s1-content-section {
+    padding: 3rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.s1-content-image {
+    width: 3rem;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.s1-content-title {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 600;
+    color: #111827 ;
+}
+
+.s1-content-text {
+    line-height: 1.625;
+}
+
+.s1-image-wrapper {
+    width: 100%;
+}
+
+.s1-card-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0 0 36px 0;
+}
+
+/* Animation keyframes */
+@keyframes borderSparkle {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes goldenShine {
+    0% { background-position: -200%; }
+    100% { background-position: 200%; }
+}
+
+.s1-golden-shine {
+    background: linear-gradient(90deg, #FFD700, #FFA500, #FFD700);
+    background-size: 400% 100%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    animation: goldenShine 3s linear infinite;
+    position: relative;
+    z-index: 2;
+}
+
+/* Media Queries */
+@media screen and (min-width: 768px) {
+    .s1-content-wrapper {
+        flex-direction: row;
+    }
+
+    .s1-content-section {
+        width: 66.666667%;
+        text-align: left;
+        align-items: flex-start;
+        padding: 3rem 4rem 3rem 3rem;
+    }
+
+    .s1-image-wrapper {
+        width: 50%;
+    }
+
+    .s1-card-image {
+        border-radius: 0 36px 36px 0;
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .s1-content-section {
+        padding-right: 6rem;
+    }
+}
+</style>
+</head>
+<body>
+    <main>
+        <!-- First Card -->
+        <div class="s1-card-container">
+            <section class="s1-card-body">
+                <div class="s1-content-wrapper">
+                    <div class="s1-content-section">
+                        <img class="s1-content-image" src="../assets/ai.png" alt="">
+                        <h1 class="s1-content-title s1-golden-shine">Advanced AI-Powered Matchmaking</h1>
+                        <p class="s1-content-text">Find your perfect match effortlessly with our AI-powered search—tailored to your preferences and just a click away!</p>
+                    </div>
+                    <div class="s1-image-wrapper">
+                        <img class="s1-card-image" alt="AI Matchmaking" src="https://framerusercontent.com/images/5cy3aBC0zohwsVKKU2qTF2YdBI.png">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Second Card -->
+        <div class="s1-card-container">
+            <section class="s1-card-body" style="bottom: -50px;">
+                <div class="s1-content-wrapper">
+                    <div class="s1-content-section">
+                        <img class="s1-content-image" src="../assets/yagya.png" alt="">
+                        <h1 class="s1-content-title s1-golden-shine">Rooted in Vedic Values</h1>
+                        <p class="s1-content-text">Guided by Vedic values, our expert matchmakers ensure a meaningful, tradition-aligned match.</p>
+                    </div>
+                    <div class="s1-image-wrapper">
+                        <img class="s1-card-image" alt="Vedic Values" src="https://framerusercontent.com/images/PjfDPMpsgzjWwtrTffIY7XVUq0.png">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Third Card -->
+        <div class="s1-card-container">
+            <section class="s1-card-body" style="bottom: -125px;">
+                <div class="s1-content-wrapper">
+                    <div class="s1-content-section">
+                        <img class="s1-content-image" src="../assets/yagya.png" alt="">
+                        <h1 class="s1-content-title s1-golden-shine">Comprehensive Education and Counselling</h1>
+                        <p class="s1-content-text">Vedic Marriage focuses on nurturing lasting relationships through expert pre-marital and marital education and counseling.</p>
+                    </div>
+                    <div class="s1-image-wrapper">
+                        <img class="s1-card-image" alt="Education and Counselling" src="https://framerusercontent.com/images/TFlyldncmgwJR9OnpfaI50YbNYU.png?scale-down-to=512">
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Fourth Card -->
+        <div class="s1-card-container tall">
+            <section class="s1-card-body" style="bottom: -120px;">
+                <div class="s1-content-wrapper">
+                    <div class="s1-content-section">
+                        <img class="s1-content-image" src="../assets/privacy.png" alt="">
+                        <h1 class="s1-content-title s1-golden-shine">Privacy and Trust</h1>
+                        <p class="s1-content-text">Your privacy is our priority — control your visibility, block members, and report misuse for a secure and personalized journey to your Vedic soulmate.</p>
+                    </div>
+                    <div class="s1-image-wrapper">
+                        <img class="s1-card-image" alt="Privacy and Trust" src="https://framerusercontent.com/images/AB27iEVvNXrsfDH6p2pfc1U0U.png">
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+ 
+</body>
+</html>
